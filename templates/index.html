@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Study Buddy</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/fuse.js@7.0.0"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.4.2/mammoth.browser.min.js"></script>
+    <script src="/js/pdf.js"></script> 
+    <script src="/js/app.js"></script>
+ 
+</head>
+<body>
+
+<main>
+    <section id="upload-section">
+        <h1>STUDY BUDDY</h1>
+        <h2>Upload Your Notes</h2>
+        <div class="upload-container">
+            <input type="file" id="file-input" accept=".pdf,.docx,.txt" />
+            <button id="upload-btn" class="btn primary-btn">Upload and Parse Notes</button>
+            <div id="upload-status" class="upload-status"></div>
+        </div>
+
+        <div id="loading-indicator" class="hidden">
+            <div class="spinner"></div>
+            <p>Generating questions...</p>
+          </div>
+    </section>
+
+    <section id="practice-section">
+        <h2>Customize Your Practice</h2>
+        <div class="settings-container">
+            <label for="practice-mode">Practice Mode:</label>
+            <select id="practice-mode" disabled>
+                <option value="">Select Mode</option>
+                <option value="multiple-choice">Multiple Choice</option>
+                <option value="true-false">True/False</option>
+                <option value="fill-blank">Fill in the Blank</option>
+                <option value="short-answer">Short Answer</option>
+                <option value="random">Random Mode ✨</option>
+            </select>
+
+            <label for="difficulty-level">Difficulty Level:</label>
+            <select id="difficulty-level" disabled>
+                <option value="">Select Difficulty</option>
+                <option value="beginner">Beginner</option>
+                <option value="intermediate">Intermediate</option>
+                <option value="expert">Expert</option>
+            </select>
+
+            <label for="question-count">Number of Questions:</label>
+            <input type="number" id="question-count" min="1" max="50" disabled>
+
+            <button id="start-practice-btn" class="btn primary-btn" disabled>Start Practice</button>
+        </div>
+    </section>
+
+
+    <section id="questions-container" class="hidden">
+        <h2>Practice Questions</h2>
+        <div id="question-progress"></div>
+        <div id="question-display"></div>
+        <div class="question-nav">
+            <button id="prev-question" class="btn secondary-btn">Previous</button>
+            <button id="next-question" class="btn primary-btn">Next</button>
+            <button id="finish-practice" class="btn success-btn hidden">Finish</button>
+        </div>
+    </section>
+
+ 
+    <section id="results-section" class="hidden">
+        <h2>Practice Summary</h2>
+        <div id="results-summary"></div>
+        <div class="results-actions">
+            <button id="download-pdf" class="btn success-btn">Download Results PDF</button>
+            <button id="new-practice" class="btn secondary-btn">Start New Practice</button>
+        </div>
+    </section>
+
+</main>
+
+</body>
+</html>

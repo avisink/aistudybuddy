@@ -1,0 +1,40 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.db
+*.sqlite3
+
+# Flask environment
+instance/
+.env
+.env.*
+
+# Virtual environment
+venv/
+.venv/
+ENV/
+env/
+
+# VS Code files
+.vscode/
+
+# OS system files
+.DS_Store
+Thumbs.db
+
+# Log files
+*.log
+
+# Node modules (if you ever use npm)
+node_modules/
+
+# Compiled static assets (optional, if generated)
+*.min.js
+*.min.css
+
+# PDF downloads (optional if you save locally)
+*.pdf
+
+
